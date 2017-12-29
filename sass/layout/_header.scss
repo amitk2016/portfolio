@@ -1,0 +1,46 @@
+.header{
+	height:85vh;
+	background-image:linear-gradient(
+		to right bottom
+		,rgba($color-primary-light,0.8)
+		,rgba($color-primary-dark,0.8))
+	,url(../img/header-1920w.jpg);
+	background-size: cover;
+	background-position:top;
+	position: relative;
+	
+
+	@supports(clip-path:polygon(0 0)) or (-webkit-clip-path:polygon(0 0)){
+		-webkit-clip-path:polygon(0% 0%,100% 0%,100% 75vh,0% 98%);
+		clip-path:polygon(0% 0%,100% 0%,100% 75vh,0% 98%);
+		height:95vh;
+	}
+	
+	@include respond(phone){
+		-webkit-clip-path:polygon(0% 0%,100% 0%,100% 85vh,0% 98%);
+		clip-path:polygon(0% 0%,100% 0%,100% 85vh,0% 98%);
+	}
+
+	&__logo-box{
+		position:absolute;
+		top:3rem;
+		left:4rem;
+	}
+
+	&__logo{
+		height:6.5rem;
+	}
+
+	&__text-box{
+		position: absolute;
+		top:50%;
+		left:50%;
+		/*background-color: red;*/
+		transform: translate(-50%,-50%);
+		text-align: center;
+	}
+
+}
+
+
+
